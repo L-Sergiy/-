@@ -559,30 +559,26 @@ body.dark-theme {
 }
 
 :root {
-    --primary-text-color: rgba(34, 197, 94, 0.9);
+    --primary-text-color: rgb(0, 131, 7);
 }
 
 body:not(.dark-theme) * {
     color: var(--primary-text-color) !important;
 }
 
-/* Перевизначаємо колір тексту для TikTok кнопки */
 .tiktok-box a {
-    color: #fff !important;
+    color: white !important;
+    background-color: var(--primary-text-color);
+    font-weight: bold;
 }
 
-.tiktok-box a {
-    background-color: rgba(34, 197, 94, 0.9);
-    color: white !important;
+.tiktok-box a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .tiktok-box a svg {
     fill: white !important;
-}
-
-.tiktok-box a:hover {
-    background-color: #15803d;
-    color: white !important;
 }
 
 .dark-theme .tiktok-box a {
