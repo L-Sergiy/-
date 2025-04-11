@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') toggleTheme();
+
+    // Встановлюємо відео при завантаженні
+    setVideo('https://www.youtube.com/embed/PR7hbMKAMcI');
 });
 
 ScrollReveal().reveal('[data-sr-id]', {
@@ -206,7 +209,7 @@ const translations = {
         winterAconiteText: "Рідкісний жовтий первоцвіт, який розцвітає ще в снігу.",
         liverleaf: "Печіночниця",
         liverleafText: "Ніжна лісова квітка, яка потребує нашого захисту.",
-        video: "Відео про красу первоцвітів",
+        video: "Відео про красу квітів 🌸",
         videoPlaceholder: "Тут буде відео, яке вставить Сергійко 🎥",
         changeTheme: "🌗 Змінити тему",
         footer: "© 2025 Збережімо первоцвіти 🌷 З любов'ю до природи і Бога 💚",
@@ -248,7 +251,7 @@ const translations = {
         winterAconiteText: "A rare yellow primrose that blooms even in snow.",
         liverleaf: "Liverleaf",
         liverleafText: "A delicate forest flower that needs our protection.",
-        video: "Video about primrose beauty",
+        video: "Video about flower beauty 🌸",
         videoPlaceholder: "Here will be a video added by Serhii 🎥",
         changeTheme: "🌗 Change theme",
         footer: "© 2025 Save Primroses 🌷 With love for nature and God 💚",
@@ -402,3 +405,13 @@ tsParticles.load("tsparticles", {
         }
     }
 });
+
+function setVideo(url) {
+    const videoFrame = document.getElementById('video-frame');
+    if (videoFrame) {
+        videoFrame.src = url;
+    }
+}
+
+// Приклад використання:
+// setVideo('https://www.youtube.com/embed/your-video-id');

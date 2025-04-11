@@ -51,6 +51,23 @@ body {
     background-position: center;
 }
 
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.75rem;
+}
+
 .video-placeholder:hover {
     background: radial-gradient(circle, #bbf7d0, #a7f3d0);
     transition: background 0.5s ease-in-out;
@@ -234,6 +251,12 @@ h2:hover .gradient-text {
     .card {
         backdrop-filter: none;
         background: rgba(255, 255, 255, 0.95);
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .card img {
+        height: 200px;
     }
     
     .typing-animation {
@@ -242,6 +265,20 @@ h2:hover .gradient-text {
     
     .parallax {
         background-attachment: scroll;
+    }
+
+    .video-placeholder {
+        padding-top: 75%; /* 4:3 для мобільних */
+    }
+
+    .benefit-card {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    footer {
+        margin-bottom: 45px; /* Зменшено з 60px до 45px */
+        padding-bottom: 10px; /* Зменшено з 15px до 10px */
     }
 }
 
@@ -527,4 +564,40 @@ body.dark-theme {
 
 body:not(.dark-theme) * {
     color: var(--primary-text-color) !important;
+}
+
+/* Перевизначаємо колір тексту для TikTok кнопки */
+.tiktok-box a {
+    color: #fff !important;
+}
+
+.tiktok-box a {
+    background-color: rgba(34, 197, 94, 0.9);
+    color: white !important;
+}
+
+.tiktok-box a svg {
+    fill: white !important;
+}
+
+.tiktok-box a:hover {
+    background-color: #15803d;
+    color: white !important;
+}
+
+.dark-theme .tiktok-box a {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-theme .tiktok-box a:hover {
+    background-color: #333;
+}
+
+body:not(.dark-theme) .tiktok-box a {
+    color: white !important;
+}
+
+body:not(.dark-theme) .tiktok-box a svg {
+    fill: white !important;
 }
