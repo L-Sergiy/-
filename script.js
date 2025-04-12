@@ -52,8 +52,8 @@ function toggleTheme() {
     document.body.appendChild(transition);
     requestAnimationFrame(() => transition.classList.add('active'));
     
-    setTimeout(() => {
         const body = document.body;
+        localStorage.setItem('theme', 'light');
         const isDark = body.classList.toggle('dark-theme');
         body.classList.toggle('light-theme', !isDark);
 
@@ -71,13 +71,10 @@ function toggleTheme() {
         header.style.borderBottom = isDark ? '1px solid #2c2c2c' : '1px solid rgba(0, 0, 0, 0.1)';
         header.style.boxShadow = isDark ? '0 4px 6px rgba(0, 0, 0, 0.5)' : '';
 
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
         transition.remove();
-
-        // Повторно застосувати мову після зміни теми
         const savedLang = localStorage.getItem('language') || 'ua';
         changeLang(savedLang);
-    }, 1000);
+
 }
 
 // Enhanced scroll handling for header
